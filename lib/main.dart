@@ -7,6 +7,7 @@ import 'package:accesibilidad/block_semantics_page.dart';
 import 'package:accesibilidad/carousel_images.dart';
 import 'package:accesibilidad/hidden_accessibility_page.dart';
 import 'package:accesibilidad/horizontal_lists.dart';
+import 'package:accesibilidad/lectura_texto.dart';
 import 'package:accesibilidad/live_region_page.dart';
 import 'package:accesibilidad/merge_semantics.dart';
 import 'package:accesibilidad/order_accessibility_page.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
+        LecturaText.route: (_) => const LecturaText(),
         HiddenAccessibilityPage.route: (_) => const HiddenAccessibilityPage(),
         LiveRegionPage.route: (_) => const LiveRegionPage(),
         OrderAccessibilityPage.route: (_) => const OrderAccessibilityPage(),
@@ -62,6 +64,12 @@ class MyHomePage extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
+                  ListTile(
+                    leading: const FlutterLogo(),
+                    title: const Text('Lectura de textos'),
+                    trailing: const Icon(Icons.arrow_forward_ios_sharp),
+                    onTap: () => Navigator.pushNamed(context, LecturaText.route),
+                  ),
                   ListTile(
                     leading: const FlutterLogo(),
                     title: const Text('Block Semantics'),
